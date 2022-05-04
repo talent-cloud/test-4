@@ -57,4 +57,4 @@ You should carry out the task according to the following instructions:
 - If needed, include a **readme** file with further instructions to build and execute the microservice and its associated tests.
 
 ## Contact
-In case you might have questions, drop us a line to talentcloud@globant.com.
+In case you might have questions, drop us a line to tcloud.research@gmail.com
