@@ -45,7 +45,7 @@ You should carry out the task according to the following instructions:
 
 1. Fork and clone this repo.
 2. Download TC-cache-api-0.0.1.jar [TC-cache-api-0.0.1.jar](/external-sources/TC-cache-api-0.0.1.jar)
-3. execute ```mvn install:install-file –Dfile=TC-cache-api-0.0.1.jar -DgroupId=com.tc.cache -DartifactId=TC-LRU-cache-api -Dversion=0.0.1``` for install the jar dependency in your local repository
+3. execute ```mvn install:install-file –Dfile=TC-cache-api-0.0.1.jar -DgroupId=com.tc.cache -DartifactId=TC-cache-api -Dversion=0.0.1``` for install the jar dependency in your local repository
 4. When done, submit (push) all your artifacts to the forked repo.
 
 ## You must consider the following conditions when submitting the task:
