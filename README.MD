@@ -51,7 +51,7 @@ You should carry out the task according to the following instructions:
 ## You must consider the following conditions when submitting the task:
 - Check that all the tests for the microservice passed (successfully)
 - Achieve an 80% of code coverage
-- We will check with this postman collection 
+- We will check with this postman collection [TC - Cache.postman_collection.json](/external-sources/TC - Cache.postman_collection.json)
 - Write clean and well-structured code, whenever possible.
 - All the parts that can be variables (eg: cache size) must be in a configuration file.
 - If needed, include a **readme** file with further instructions to build and execute the microservice and its associated tests.
