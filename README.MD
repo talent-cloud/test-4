@@ -44,14 +44,14 @@ Cache content:
 You should carry out the task according to the following instructions:
 
 1. Fork and clone this repo.
-2. Download TC-cache-api-0.0.1.jar [Incluir enlace al jar]
+2. Download TC-cache-api-0.0.1.jar [TC-cache-api-0.0.1.jar](/external-sources/TC-cache-api-0.0.1.jar)
 3. execute ```mvn install:install-file –Dfile=TC-cache-api-0.0.1.jar -DgroupId=com.tc.cache -DartifactId=TC-LRU-cache-api -Dversion=0.0.1``` for install the jar dependency in your local repository
 4. When done, submit (push) all your artifacts to the forked repo.
 
 ## You must consider the following conditions when submitting the task:
 - Check that all the tests for the microservice passed (successfully)
 - Achieve an 80% of code coverage
-- We will check with this postman collection [incluir Postman]
+- We will check with this postman collection 
 - Write clean and well-structured code, whenever possible.
 - All the parts that can be variables (eg: cache size) must be in a configuration file.
 - If needed, include a **readme** file with further instructions to build and execute the microservice and its associated tests.
