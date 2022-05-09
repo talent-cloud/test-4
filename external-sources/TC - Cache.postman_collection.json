@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/cache/0",
+					"raw": "http://localhost:8080/cache/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -19,7 +19,7 @@
 					"port": "8080",
 					"path": [
 						"cache",
-						"0"
+						"2"
 					]
 				}
 			},
@@ -97,14 +97,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/cache/",
+					"raw": "http://localhost:8080/lru/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"cache",
+						"lru",
 						""
 					]
 				}
