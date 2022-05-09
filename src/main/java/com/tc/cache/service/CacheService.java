@@ -1,24 +1,33 @@
 package com.tc.cache.service;
 
-import org.springframework.http.HttpStatus;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 
 import com.tc.cache.api.CacheApiDelegate;
 import com.tc.cache.model.CacheData;
+import org.springframework.web.bind.annotation.*;
 
-@Component
+
+@RestController
+@RequestMapping("/lru")
+@AllArgsConstructor
+@Slf4j
 public class CacheService implements CacheApiDelegate {
+    private final CacheStorageService inMemoryCache;
 
     @Override
-    public ResponseEntity<Object> cacheIdGet(Integer id) {
-        //TODO implement method
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> cacheIdGet(@PathVariable("id") Integer id) {
+        Object cacheObject =  inMemoryCache.get(id);
+        return ResponseEntity.ok(cacheObject);
     }
 
     @Override
-    public ResponseEntity<Void> cachePut(CacheData cacheData) {
-        //TODO implement method
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    @PutMapping
+    public ResponseEntity<Void> cachePut(@RequestBody CacheData cacheData) {
+        log.info("Saving cache data with key {} and object: {}", cacheData.getId(), cacheData.getData());
+        inMemoryCache.put(cacheData);
+        return ResponseEntity.ok().build();
     }
 }
