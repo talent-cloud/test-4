@@ -11,14 +11,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/lru/0",
+					"raw": "http://localhost:8080/cache/0",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"lru",
+						"cache",
 						"0"
 					]
 				}
@@ -54,14 +54,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/lru/",
+					"raw": "http://localhost:8080/cache/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"lru",
+						"cache",
 						""
 					]
 				}
@@ -97,14 +97,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/lru/",
+					"raw": "http://localhost:8080/cache/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"lru",
+						"cache",
 						""
 					]
 				}
