@@ -26,7 +26,7 @@ class CacheServiceTest {
 	}
 
 	@Test
-	public void testCacheService() throws Exception {
+	public void testCacheServiceWithNormalOrder() throws Exception {
 		String cacheData = "{\"id\":1,\"data\":\"A\"}";
 
 		mvc.perform(put("/lru")
@@ -73,5 +73,62 @@ class CacheServiceTest {
 				.andExpect(status().isOk())
 				.andReturn();
 		assertThat(response.getResponse().getContentAsString()).isEqualTo("");
+	}
+
+
+	@Test
+	public void testCacheServiceKeepingRecentKey() throws Exception {
+		String cacheData = "{\"id\":1,\"data\":\"A\"}";
+
+		mvc.perform(put("/lru")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(cacheData))
+				.andExpect(status().isOk());
+
+		MvcResult response = mvc.perform(get("/lru/1")
+						.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+		assertThat(response.getResponse().getContentAsString()).isEqualTo("A");
+
+		cacheData = "{\"id\":2,\"data\":\"B\"}";
+
+		mvc.perform(put("/lru")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(cacheData))
+				.andExpect(status().isOk());
+
+		response = mvc.perform(get("/lru/1")
+						.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+		assertThat(response.getResponse().getContentAsString()).isEqualTo("A");
+
+		cacheData = "{\"id\":3,\"data\":\"C\"}";
+
+		mvc.perform(put("/lru")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(cacheData))
+				.andExpect(status().isOk());
+
+
+
+		response = mvc.perform(get("/lru/1")
+						.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+		assertThat(response.getResponse().getContentAsString()).isEqualTo("A");
+
+		response = mvc.perform(get("/lru/2")
+						.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+		assertThat(response.getResponse().getContentAsString()).isEqualTo("");
+
+		response = mvc.perform(get("/lru/3")
+						.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+		assertThat(response.getResponse().getContentAsString()).isEqualTo("C");
 	}
 }

@@ -14,28 +14,30 @@ public class CacheStorageService {
     @Value("${tc.cache.size}")
     private Integer cacheSize;
     private Map<Integer,Object> synchronizedMap;
-    private Queue<Integer> keyQueue = new ArrayDeque<>();
 
     public CacheStorageService() {
-        Map<Integer,Object> map = new HashMap<>();
-        synchronizedMap = Collections.synchronizedMap(map);
+        synchronizedMap = Collections.synchronizedMap(new LinkedHashMap<>());
     }
 
     public void put(CacheData cacheData){
         synchronizedMap.put(cacheData.getId(), cacheData.getData());
-        configureMemoryKeyQueue(cacheData);
+        configureCacheStorage(cacheData);
     }
 
-    private void configureMemoryKeyQueue(CacheData cacheData) {
-        keyQueue.add(cacheData.getId());
-        if(keyQueue.size()>cacheSize){
-            Integer key = keyQueue.poll();
-            log.info("Removing key: {}", key);
-            synchronizedMap.remove(key);
+    private void configureCacheStorage(CacheData cacheData) {
+        if(synchronizedMap.size()>cacheSize){
+            List<Integer> keys = new ArrayList<>(synchronizedMap.keySet());
+            Integer keyToBeRemoved = keys.get(0);
+            log.info("Removing key: {} ", keyToBeRemoved);
+            synchronizedMap.remove(keyToBeRemoved);
         }
+
     }
 
     public Object get(Integer key){
+        Object keyObject = synchronizedMap.get(key);
+        synchronizedMap.remove(key); // removing and then inserting to update the order of LinkedHashMap
+        synchronizedMap.put(key, keyObject); // inserting the data again for updating the order of LinkedHashMap
         return synchronizedMap.get(key);
     }
 }
