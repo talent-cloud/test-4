@@ -34,6 +34,17 @@ Cache content:
 2, C
 4, X
 3, D
+
+As you can see the (2, C) was moved to top
+
+PUT(5, J)
+
+Cache content: 
+5, J
+2, C
+4, X
+
+As you can see (3, D) was removed because is the oldest in use
 ````
 
 ## OpenAPI Specification
