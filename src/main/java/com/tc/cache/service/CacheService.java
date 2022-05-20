@@ -26,8 +26,4 @@ public class CacheService implements CacheApiDelegate {
         cacheManager.put(cacheData.getId(), cacheData.getData());
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-    public String cacheContent() {
-        return cacheManager.getContent();
-    }
 }
