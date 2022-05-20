@@ -1,24 +1,33 @@
 package com.tc.cache.service;
 
+import com.tc.cache.api.CacheApiDelegate;
+import com.tc.cache.manager.CacheManager;
+import com.tc.cache.model.CacheData;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-import com.tc.cache.api.CacheApiDelegate;
-import com.tc.cache.model.CacheData;
-
 @Component
 public class CacheService implements CacheApiDelegate {
 
+    private final CacheManager cacheManager;
+
+    public CacheService(CacheManager cacheManager) {
+        this.cacheManager = cacheManager;
+    }
+
     @Override
     public ResponseEntity<Object> cacheIdGet(Integer id) {
-        //TODO implement method
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return ResponseEntity.ok(cacheManager.get(id));
     }
 
     @Override
     public ResponseEntity<Void> cachePut(CacheData cacheData) {
-        //TODO implement method
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        cacheManager.put(cacheData.getId(), cacheData.getData());
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    public String cacheContent() {
+        return cacheManager.getContent();
     }
 }
