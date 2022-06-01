@@ -84,28 +84,28 @@
   
   - Cache PUT 1
   <div align="center">
-      <img src="/screenshots/Cache_PUT_1.png" width="400px"></img> 
+      <img src="/screenshots/Cache_PUT_1.png" width="100%"></img> 
   </div>
   
   - Cache PUT 2
   <div align="center">
-      <img src="/screenshots/Cache_PUT_2.png" width="400px"></img> 
+      <img src="/screenshots/Cache_PUT_2.png" width="100%"></img> 
   </div>
   
   - Cache PUT 3
   <div align="center">
-      <img src="/screenshots/Cache_PUT_3.png" width="400px"></img> 
+      <img src="/screenshots/Cache_PUT_3.png" width="100%"></img> 
   </div>
 
 #####- For Cache Get
   - Cache Get 1
   <div align="center">
-      <img src="/screenshots/Cache_GET_1.png" width="400px"></img> 
+      <img src="/screenshots/Cache_GET_1.png" width="100%"></img> 
   </div>
 
   - Cache Get 2
   <div align="center">
-      <img src="/screenshots/Cache_GET_2.png" width="400px"></img> 
+      <img src="/screenshots/Cache_GET_2.png" width="100%"></img> 
   </div>
 
 ##### Note: If any problem faced the check the Java version by ``` java --version ``` and Maven version and Java version associated with Maven by ```mvn --version```
