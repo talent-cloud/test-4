@@ -76,7 +76,7 @@
       1, B
     ````
 #### With Postman
-#####- For Cache Store
+##### - For Cache Store
   - Cache PUT 0
   <div align="center">
       <img src="/screenshots/Cache_PUT_0.png" width="100%"></img> 
@@ -97,7 +97,7 @@
       <img src="/screenshots/Cache_PUT_3.png" width="100%"></img> 
   </div>
 
-#####- For Cache Get
+##### - For Cache Get
   - Cache Get 1
   <div align="center">
       <img src="/screenshots/Cache_GET_1.png" width="100%"></img> 
