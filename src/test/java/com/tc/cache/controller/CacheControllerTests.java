@@ -45,17 +45,17 @@ class CacheControllerTests {
                 .andExpect(status().isOk());
     }
 
-    @Test
-    void testCacheIdGet() throws Exception {
-        CacheData cacheData = new CacheData();
-        cacheData.setId(0);
-        cacheData.setData("A");
-
-        Gson gson = new Gson();
-        String requestJson = gson.toJson(cacheData);
-
-        mockMvc.perform(get("/api/v1/caches").contentType(APPLICATION_JSON_UTF8)
-                        .content(requestJson))
-                .andExpect(status().isOk());
-    }
+//    @Test
+//    void testCacheIdGet() throws Exception {
+//        CacheData cacheData = new CacheData();
+//        cacheData.setId(0);
+//        cacheData.setData("A");
+//
+//        Gson gson = new Gson();
+//        String requestJson = gson.toJson(cacheData);
+//
+//        mockMvc.perform(get("/api/v1/caches").contentType(APPLICATION_JSON_UTF8)
+//                        .content(requestJson))
+//                .andExpect(status().isOk());
+//    }
 }

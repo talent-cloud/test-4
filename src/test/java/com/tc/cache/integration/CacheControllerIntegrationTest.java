@@ -42,7 +42,7 @@ public class CacheControllerIntegrationTest {
                 .and()
                 .body(requestJson)
                 .when()
-                .put("/cache")
+                .put("/api/v1/caches")
                 .then()
                 .extract().response();
 
@@ -51,7 +51,7 @@ public class CacheControllerIntegrationTest {
 
     @Test
     public void givenCacheURI_whenSendingReq_asCacheGetId_thenVerifyResponseStatus() {
-        given().get("/cache/0")
+        given().get("/api/v1/caches/0")
                 .then()
                 .statusCode(200);
     }
