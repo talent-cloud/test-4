@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "a7c5f5cd-e8f4-4cde-8950-0cce00837d13",
+		"name": "TC - Cache (test-4)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Put Cache Element",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var iteration = pm.info.iteration",
+							"postman.setEnvironmentVariable(\"putId\", iteration)",
+							"postman.setEnvironmentVariable(\"putData\", \"data-\"+iteration)",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"data\": \"B\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/caches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"caches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cache Element",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/caches/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"caches",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
