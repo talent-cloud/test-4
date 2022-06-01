@@ -27,6 +27,7 @@
     </dependency>
     ````
 - You can customize the cache size by changing value (any Integer) of ```tc.cache.size``` in application.properties file i.e. ```tc.cache.size=10``` 
+
 - Clean and Package (Open terminal in the project root directory and run the following command)
     ````
     mvn clean package
@@ -78,7 +79,7 @@
 #####- For Cache Store
   - Cache PUT 0
   <div align="center">
-      <img src="/screenshots/Cache_PUT_0.png" width="400px"></img> 
+      <img src="/screenshots/Cache_PUT_0.png" width="100%"></img> 
   </div>
   
   - Cache PUT 1
