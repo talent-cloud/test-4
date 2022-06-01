@@ -108,4 +108,4 @@
       <img src="/screenshots/Cache_GET_2.png" width="100%"></img> 
   </div>
 
-##### Note: If any problem faced the check the Java version by ``` java --version ``` and Maven version and Java version associated with Maven by ```mvn --version```
+##### Note: If any problem faced then check the Java version by ``` java --version ``` and Maven version and Java version associated with Maven by ```mvn --version``` or raise issue(s).
